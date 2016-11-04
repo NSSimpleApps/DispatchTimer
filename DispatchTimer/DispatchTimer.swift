@@ -8,21 +8,21 @@
 
 import Foundation
 
-class DispatchTimer: NSObject {
+class DispatchTimer {
     
-    private let queue = dispatch_queue_create("ns.simple.apps", DISPATCH_QUEUE_SERIAL)
+    fileprivate let queue = DispatchQueue(label: "ns.simple.apps")
     
-    private var timer: dispatch_source_t!
+    fileprivate var timer: DispatchSourceTimer!
     
-    private var isTicking = false
+    fileprivate var isTicking = false
     
-    private var counter = 0
-    private var initialTime = 0
+    fileprivate var counter = 0
+    fileprivate var initialTime = 0
     
     var block: ((Int) -> Void)?
     var completionBlock: ((Int) -> Void)?
     
-    func startWithInitialTime(initialTime: Int) {
+    func start(with initialTime: Int) {
         
         if self.isTicking { return }
         
@@ -31,12 +31,10 @@ class DispatchTimer: NSObject {
         
         self.isTicking = true
         
-        self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, self.queue)
-        
-        dispatch_source_set_timer(self.timer, dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC)),
-                                  1 * NSEC_PER_SEC, (1 * NSEC_PER_SEC) / 10)
-        
-        dispatch_source_set_event_handler(self.timer) { [weak self] () -> Void in
+        self.timer = DispatchSource.makeTimerSource(flags: DispatchSource.TimerFlags(rawValue: UInt(0)), queue: self.queue)
+        self.timer.scheduleRepeating(deadline: DispatchTime(uptimeNanoseconds: UInt64(initialTime) * NSEC_PER_SEC),
+                                     interval: Double(1))
+        self.timer.setEventHandler { [weak self] () -> Void in
             
             if let strongSelf = self {
                 
@@ -57,14 +55,14 @@ class DispatchTimer: NSObject {
             }
         }
         
-        dispatch_resume(self.timer)
+        self.timer.activate()
     }
     
     func pause() {
         
         if self.isTicking {
             
-            dispatch_suspend(self.timer)
+            self.timer.suspend()
             
             self.isTicking = false
         }
@@ -74,7 +72,7 @@ class DispatchTimer: NSObject {
         
         if !self.isTicking && self.timer != nil {
             
-            dispatch_resume(self.timer)
+            self.timer.resume()
             
             self.isTicking = true
         }
@@ -84,7 +82,7 @@ class DispatchTimer: NSObject {
         
         if self.isTicking {
             
-            dispatch_source_cancel(self.timer)
+            self.timer.cancel()
             self.timer = nil
             
             self.isTicking = false

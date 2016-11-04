@@ -26,7 +26,7 @@ class ViewController: UIViewController {
                 
                 let text = String(t)
                 
-                dispatch_async(dispatch_get_main_queue(), {
+                DispatchQueue.main.async(execute: {
                     
                     strongSelf.label.text = text
                 })
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
                 
                 let text = "Elapsed time: " + String(elapsedTime)
                 
-                dispatch_async(dispatch_get_main_queue(), {
+                DispatchQueue.main.async(execute: {
                     
                     strongSelf.label.text = text
                 })
@@ -48,24 +48,24 @@ class ViewController: UIViewController {
     }
 
     
-    @IBAction func startTimer(sender: UIBarButtonItem) {
+    @IBAction func startTimer(_ sender: UIBarButtonItem) {
         
         self.label.text = "10"
         
-        self.timer.startWithInitialTime(10)
+        self.timer.start(with: 10)
     }
 
-    @IBAction func cancelTimer(sender: UIBarButtonItem) {
+    @IBAction func cancelTimer(_ sender: UIBarButtonItem) {
         
-        self.timer.stop()
+        _ = self.timer.stop()
     }
     
-    @IBAction func pauseTimer(sender: UIBarButtonItem) {
+    @IBAction func pauseTimer(_ sender: UIBarButtonItem) {
         
         self.timer.pause()
     }
     
-    @IBAction func resumeTimer(sender: UIBarButtonItem) {
+    @IBAction func resumeTimer(_ sender: UIBarButtonItem) {
         
         self.timer.resume()
     }
