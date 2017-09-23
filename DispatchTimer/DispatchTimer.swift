@@ -32,8 +32,9 @@ class DispatchTimer {
         self.isTicking = true
         
         self.timer = DispatchSource.makeTimerSource(flags: DispatchSource.TimerFlags(rawValue: UInt(0)), queue: self.queue)
-        self.timer.scheduleRepeating(deadline: DispatchTime(uptimeNanoseconds: UInt64(initialTime) * NSEC_PER_SEC),
-                                     interval: Double(1))
+        self.timer.schedule(deadline: DispatchTime(uptimeNanoseconds: UInt64(initialTime) * NSEC_PER_SEC), repeating: Double(1), leeway: .milliseconds(1))
+        //self.timer.scheduleRepeating(deadline: DispatchTime(uptimeNanoseconds: UInt64(initialTime) * NSEC_PER_SEC),
+                                     //interval: Double(1))
         self.timer.setEventHandler { [weak self] () -> Void in
             
             if let strongSelf = self {
