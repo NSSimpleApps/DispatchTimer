@@ -3,13 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		B522EA251D2ACB1600539AE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522EA241D2ACB1600539AE4 /* AppDelegate.swift */; };
 		B522EA271D2ACB1600539AE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522EA261D2ACB1600539AE4 /* ViewController.swift */; };
-		B522EA2A1D2ACB1600539AE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B522EA281D2ACB1600539AE4 /* Main.storyboard */; };
 		B522EA2C1D2ACB1600539AE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B522EA2B1D2ACB1600539AE4 /* Assets.xcassets */; };
 		B522EA2F1D2ACB1600539AE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B522EA2D1D2ACB1600539AE4 /* LaunchScreen.storyboard */; };
 		B522EA371D2ACB2B00539AE4 /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522EA361D2ACB2B00539AE4 /* DispatchTimer.swift */; };
@@ -19,7 +18,6 @@
 		B522EA211D2ACB1600539AE4 /* DispatchTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DispatchTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B522EA241D2ACB1600539AE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B522EA261D2ACB1600539AE4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B522EA291D2ACB1600539AE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B522EA2B1D2ACB1600539AE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B522EA2E1D2ACB1600539AE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B522EA301D2ACB1600539AE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,7 +59,6 @@
 				B522EA361D2ACB2B00539AE4 /* DispatchTimer.swift */,
 				B522EA241D2ACB1600539AE4 /* AppDelegate.swift */,
 				B522EA261D2ACB1600539AE4 /* ViewController.swift */,
-				B522EA281D2ACB1600539AE4 /* Main.storyboard */,
 				B522EA2B1D2ACB1600539AE4 /* Assets.xcassets */,
 				B522EA2D1D2ACB1600539AE4 /* LaunchScreen.storyboard */,
 				B522EA301D2ACB1600539AE4 /* Info.plist */,
@@ -96,7 +93,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1310;
 				ORGANIZATIONNAME = NSSimpleApps;
 				TargetAttributes = {
 					B522EA201D2ACB1600539AE4 = {
@@ -106,7 +103,7 @@
 				};
 			};
 			buildConfigurationList = B522EA1C1D2ACB1600539AE4 /* Build configuration list for PBXProject "DispatchTimer" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -130,7 +127,6 @@
 			files = (
 				B522EA2F1D2ACB1600539AE4 /* LaunchScreen.storyboard in Resources */,
 				B522EA2C1D2ACB1600539AE4 /* Assets.xcassets in Resources */,
-				B522EA2A1D2ACB1600539AE4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,14 +146,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B522EA281D2ACB1600539AE4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B522EA291D2ACB1600539AE4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B522EA2D1D2ACB1600539AE4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -193,6 +181,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -217,7 +206,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -250,6 +239,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -268,10 +258,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -282,7 +273,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DispatchTimer/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = NSSimpleApps.DispatchTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -294,7 +288,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DispatchTimer/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = NSSimpleApps.DispatchTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
